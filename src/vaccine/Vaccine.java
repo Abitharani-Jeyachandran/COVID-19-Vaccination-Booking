@@ -9,4 +9,5 @@ public class Vaccine
 	public String vaccineType;
 	public String vaccinationAvailableDay;
 	public Map<String,Boolean> availabilty=new LinkedHashMap<>();
+	
 }
