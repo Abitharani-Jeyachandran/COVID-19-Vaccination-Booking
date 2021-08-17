@@ -2,8 +2,8 @@ package vaccine;
 
 public class Admin 
 {
-	private String adminID = "ADMIN1234";
-	private String password = "admin@123";
+	private String adminID = "admin";
+	private String password = "123";
 	
 	Admin(String adminId,String password)
 	{
