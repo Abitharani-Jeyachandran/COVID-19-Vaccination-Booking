@@ -3,10 +3,10 @@ package vaccine;
 import java.util.Map;
 import java.util.LinkedHashMap;
 
-public class Doctor
+public class Vaccine
 {
-	public String doctorName;
-	public String doctorType;
-	public String doctorAvailableDay;
+	
+	public String vaccineType;
+	public String vaccinationAvailableDay;
 	public Map<String,Boolean> availabilty=new LinkedHashMap<>();
 }
