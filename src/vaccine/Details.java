@@ -5,46 +5,43 @@ import java.util.Scanner;
 
 public class Details
 {
-	static int numberOfDoctors = 0;
-	public void getDoctorDetails(List<Doctor> doctors)
+	static int numberOfVaccine = 0;
+	public void getVaccineDetails(List<Vaccine> vaccines)
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Number Of doctors:");
-		numberOfDoctors=sc.nextInt();
-		for(int index = 1;index <= numberOfDoctors;index++)
+		System.out.println("\nEnter Number Of Vaccines:");
+		numberOfVaccine=sc.nextInt();
+		for(int index = 1;index <= numberOfVaccine;index++)
 		{
-			Doctor doctor=new Doctor();
-			System.out.println("Enter Doctor Name: \nAvailability -> Pediatretion:[A / B / C] , ENT:[D / E] , DT:[F / G]");
-			String name = sc.next();
-			doctor.doctorName=name;
-			System.out.println("Enter Type of Doctor Pediatretion / ENT / DT");
+			Vaccine vaccine=new Vaccine();
+			System.out.println("Enter Type of Vaccine    1)Sinaform / 2)Delta / 3)PFizer");
 			String type=sc.next();
-			doctor.doctorType=type;
-			System.out.println("Enter the day in which Doctor will be available");
+			vaccine.vaccineType=type;
+			System.out.println("Enter the day in which Vaccine will be available");
 			String day=sc.next();
-			doctor.doctorAvailableDay=day;
-			System.out.println("Enter the number of slots,the doctor will be available");
+			vaccine.vaccinationAvailableDay=day;
+			System.out.println("Enter the number of slots,the Vaccine will be available");
 			int slotNumber=sc.nextInt();
 			for(int start = 1;start <= slotNumber;start++) 
 			{
-				doctor.availabilty.put(sc.next(),false);
+				vaccine.availabilty.put(sc.next(),false);
 			}			
-			doctors.add(doctor);
+			vaccines.add(vaccine);
 		}
 	}
-	public boolean getPatientDetails(List<Doctor> doctors,List<String> bookingHistory)
+	public boolean getPatientDetails(List<Vaccine> vaccines,List<String> bookingHistory)
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Patient's Name:");
 		String patientName = sc.next();
-        System.out.println("Enter the speciality of the doctor:");
-    	String doctorType = sc.next();
-	    System.out.println("Enter appointment day: "); 
+        System.out.println("Enter the vaccine:");
+    	String vaccineType = sc.next();
+	    System.out.println("Enter vaccination day: "); 
  	    String day = sc.next();
-	    System.out.println("Time of appointment: [HH:MM] ");
+	    System.out.println("Time of vaccination: [HH:MM] ");
 	    String time = sc.next();
-	    Appointment appointment = new Appointment();
-	    if(appointment.bookAppointemnt(doctors,patientName,doctorType,day,time,numberOfDoctors,bookingHistory))
+	    Vaccination appointment = new Vaccination();
+	    if(appointment.bookAppointemnt(vaccines,patientName,vaccineType,day,time,numberOfVaccine,bookingHistory))
 	    	return true;
 	    return false;
 	}
