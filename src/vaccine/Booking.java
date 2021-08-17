@@ -10,11 +10,11 @@ import java.util.LinkedHashMap;
 public class Booking 
 {
 	static int count = 0;
-	static Appointment appointment = new Appointment();
+	static Vaccination vaccination = new Vaccination();
 	static Details details = new Details();
-	static List<Doctor> doctors=new LinkedList<>();
+	static List<Vaccine> vaccines=new LinkedList<>();
 	static List<String> bookingHistory = new ArrayList<>();
-	static Map<String,Integer> doctorTimiSlot = new LinkedHashMap<>();
+	static Map<String,Integer> vaccinationTimiSlot = new LinkedHashMap<>();
 	public static void main(String[] args)
 	{
 		Scanner sc=new Scanner(System.in);
@@ -35,8 +35,8 @@ public class Booking
 			if(admin.validateAdmin(adminId,adminPassword))
 			{
 				System.out.println("Admin Validated Successfully");
-				System.out.println("Please Enter the Details of Doctors Available!!!");
-				details.getDoctorDetails(doctors);
+				System.out.println("Please Enter the Details of Vaccines Available!!!");
+				details.getVaccineDetails(vaccines);
 			}
 			else 
 				System.out.println("Admin Credentials are not valid");
@@ -50,7 +50,7 @@ public class Booking
 			    count = 0;
 			    if(entryOption == 'y'||entryOption == 'Y')
 			    {
-			    	System.out.println("Enter number of Bookings to be done: ");
+			    	System.out.println("\nEnter number of Bookings to be done: ");
 			    	int numberofBookings = sc.nextInt();
 			    	while(numberofBookings-- > 0)
 			    	{
@@ -91,7 +91,7 @@ public class Booking
 	
 	public static boolean addBooking(Scanner sc)
 	{
-		if(details.getPatientDetails(doctors,bookingHistory))
+		if(details.getPatientDetails(vaccines,bookingHistory))
 			return true;
 		return false;
 	}
