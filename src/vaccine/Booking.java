@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.LinkedList;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 
 public class Booking
 {
@@ -14,7 +14,7 @@ public class Booking
 	static Details details = new Details();
 	static List<Vaccine> vaccines=new LinkedList<>();
 	static List<String> bookingHistory = new ArrayList<>();
-	static Map<String,Integer> vaccinationTimiSlot = new LinkedHashMap<>();
+	static Map<String,Integer> vaccinationTimiSlot = new HashMap<>();
 	public static void main(String[] args)
 	{
 		Scanner sc=new Scanner(System.in);
