@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Vaccination
 {
-	public boolean bookAppointemnt(List<Vaccine> vaccines,String personName,String doctorType,String day,String time,int numberOfVaccine,List<String> bookingHistory)
+	public boolean bookAppointemnt(List<Vaccine> vaccines,String personName,String vaccineType,String day,String time,int numberOfVaccine,List<String> bookingHistory)
 	{
 		if(checkAvailability(vaccines,personName,vaccineType,day,time,numberOfVaccine,bookingHistory))
 			return true;
