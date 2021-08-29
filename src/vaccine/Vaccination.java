@@ -25,7 +25,8 @@ public class Vaccination
 					 if(time.equalsIgnoreCase(m.getKey())&&(m.getValue()==false))
 					 {
 						doc.availabilty.put(m.getKey(),true);
-						String s="Vaccine is Booked for vaccination on "+day+" at "+time+" ";
+						String s="Vaccine is booked for vaccination on "+day+" at "+time+" ";
+						//Add details to booking history
 						bookingHistory.add(s);
 						System.out.println(s);
 						flag=1;
@@ -35,6 +36,7 @@ public class Vaccination
 			  }
 		   }
 		   if(flag==0)
+			 //Vaccine not available validation
 		   {
 		       System.out.println("Vaccination is not available at that time.Kindly check for another slot");
 		       return false;
