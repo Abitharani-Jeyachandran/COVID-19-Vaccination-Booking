@@ -39,7 +39,7 @@ public class Details
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Name:");
 		//Get name who wants to take vaccinattion
-		String patientName = sc.next();
+		String personName = sc.next();
         System.out.println("Enter the vaccine type:");
 			//Get vaccinattion type
     	String vaccineType = sc.next();
@@ -50,7 +50,7 @@ public class Details
 			//Get vaccinattion time
 	    String time = sc.next();
 	    Vaccination appointment = new Vaccination();
-			if(appointment.bookAppointemnt(vaccines,patientName,vaccineType,day,time,numberOfVaccine,bookingHistory))
+			if(appointment.bookAppointemnt(vaccines,personName,vaccineType,day,time,numberOfVaccine,bookingHistory))
 	    	return true;
 	    return false;
 	}

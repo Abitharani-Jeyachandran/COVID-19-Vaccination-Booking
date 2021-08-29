@@ -5,34 +5,34 @@ import java.util.Map;
 
 public class Vaccination
 {
-	public boolean bookAppointemnt(List<Vaccine> vaccines,String patientName,String doctorType,String day,String time,int numberOfDoctors,List<String> bookingHistory)
+	public boolean bookAppointemnt(List<Vaccine> vaccines,String personName,String doctorType,String day,String time,int numberOfVaccine,List<String> bookingHistory)
 	{
-		if(checkAvailability(vaccines,patientName,doctorType,day,time,numberOfDoctors,bookingHistory))
+		if(checkAvailability(vaccines,personName,vaccineType,day,time,numberOfVaccine,bookingHistory))
 			return true;
 		return false;
 	}
-	
-	public boolean checkAvailability(List<Vaccine> doctors,String patientName,String doctorType,String day,String time,int numberOfDoctors,List<String> bookingHistory)
+	//Check availability
+	public boolean checkAvailability(List<Vaccine> vaccines,String personName,String doctorType,String day,String time,int numberOfVaccine,List<String> bookingHistory)
 	{
 		int flag=0;
-		OUTER:for(int index = 0;index < numberOfDoctors;index++) 
+		OUTER:for(int index = 0;index < numberOfVaccine;index++)
 		{
-			 Vaccine doc=doctors.get(index);
-		     if(doc.vaccinationAvailableDay.equalsIgnoreCase(day)&&doc.vaccineType.equalsIgnoreCase(doctorType)) 
+			 Vaccine doc=vaccines.get(index);
+		     if(doc.vaccinationAvailableDay.equalsIgnoreCase(day)&&doc.vaccineType.equalsIgnoreCase(doctorType))
 		     {
 				 for(Map.Entry<String, Boolean> m:doc.availabilty.entrySet())
 			     {
-					 if(time.equalsIgnoreCase(m.getKey())&&(m.getValue()==false)) 
+					 if(time.equalsIgnoreCase(m.getKey())&&(m.getValue()==false))
 					 {
 						doc.availabilty.put(m.getKey(),true);
-						String s="Vaccine is Booked for vaccination on "+day+" at "+time+" PM";
+						String s="Vaccine is Booked for vaccination on "+day+" at "+time+" ";
 						bookingHistory.add(s);
 						System.out.println(s);
 						flag=1;
 						break OUTER;
 					 }
 				 }
-			  }			
+			  }
 		   }
 		   if(flag==0)
 		   {
