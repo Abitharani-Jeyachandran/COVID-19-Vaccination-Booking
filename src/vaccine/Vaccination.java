@@ -21,7 +21,7 @@ public class Vaccination {
 				for (Map.Entry<String, Boolean> m : doc.availabilty.entrySet()) {
 					if (time.equalsIgnoreCase(m.getKey()) && (m.getValue() == false)) {
 						doc.availabilty.put(m.getKey(), true);
-						String s = "Vaccine is booked for vaccination on " + day + " at " + time + " ";
+						String s = "Vaccine is booked for vaccination by " + personName + " on " + day + " at " + time + " ";
 						// Add details to booking history
 						bookingHistory.add(s);
 						System.out.println(s);
