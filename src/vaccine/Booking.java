@@ -59,7 +59,7 @@ public class Booking {
 							// System.out.println("\nEnter number of Bookings to be done: ");
 							int numberofBookings = 1;
 							while (numberofBookings-- > 0) {
-								System.out.println("Booking Number: " + (count + 1));
+								System.out.println("Allocated vaccine: " + (count + 1));
 								if (addBooking(sc) == false)
 									continue INNER;
 								count++;

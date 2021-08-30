@@ -14,7 +14,7 @@ public class Details {
 		for (int index = 1; index <= numberOfVaccine; index++) {
 			Vaccine vaccine = new Vaccine();
 			// Get type of vaccine
-			System.out.println("Enter Type of Vaccine    1)Sinaform / 2)Delta / 3)PFizer");
+			System.out.println("Enter Type of Vaccine    1)Sinaform / 2)PFizer");
 			String type = sc.next();
 			// Check whether vaccine type available
 			vaccine.vaccineType = type;
@@ -39,20 +39,22 @@ public class Details {
 		// Get name who wants to take vaccinattion
 		String personName = sc.next();
 		String personAge = "0";
+		// Geting correct age for vaccination
 		redo: while (true) {
 			System.out.println("Enter the Age:");
 			// Get person age
 			personAge = sc.next();
 			String vacType = "";
+			// Define the PFizer vaccine for age between 1-18
 			if (Integer.parseInt(personAge) <= 18 && Integer.parseInt(personAge) >= 10) {
 				System.out.println("Vaccine type:PFizer");
-				vacType = "3";
-
+				vacType = "2";
+				// Define the Sinaform vaccine for age between 10-100
 			} else if (Integer.parseInt(personAge) > 18 && Integer.parseInt(personAge) <= 100) {
 				System.out.println("Vaccine type:Sinaform");
 				vacType = "1";
 
-				// String vaccineType = sc.next();
+				// Enterd age is less than 10 statement will redo
 			} else {
 				System.out.println("Age between 10 to 100");
 				continue redo;
