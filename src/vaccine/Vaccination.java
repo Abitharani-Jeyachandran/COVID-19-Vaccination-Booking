@@ -6,13 +6,13 @@ import java.util.Map;
 public class Vaccination {
 	public boolean bookAppointemnt(List<Vaccine> vaccines, String personName, String personAge, String vaccineType,
 			String day, String time, int numberOfVaccine, List<String> bookingHistory) {
-		if (checkAvailability(vaccines, personName, vaccineType, day, time, numberOfVaccine, bookingHistory))
+		if (checkAvailability(vaccines, personName,personAge , vaccineType, day, time, numberOfVaccine, bookingHistory))
 			return true;
 		return false;
 	}
 
 	// Check availability
-	public boolean checkAvailability(List<Vaccine> vaccines, String personName, String vaccineType, String day,
+	public boolean checkAvailability(List<Vaccine> vaccines, String personName,String personAge, String vaccineType, String day,
 			String time, int numberOfVaccine, List<String> bookingHistory) {
 		int flag = 0;
 		OUTER: for (int index = 0; index < numberOfVaccine; index++) {
@@ -21,7 +21,7 @@ public class Vaccination {
 				for (Map.Entry<String, Boolean> m : doc.availabilty.entrySet()) {
 					if (time.equalsIgnoreCase(m.getKey()) && (m.getValue() == false)) {
 						doc.availabilty.put(m.getKey(), true);
-						String s = "Vaccine is booked for vaccination by " + personName + " on " + day + " at " + time + " ";
+						String s = "Vaccine is booked for vaccination by " + personName  +  personAge + " on " + day + " at " + time + " ";
 						// Add details to booking history
 						bookingHistory.add(s);
 						System.out.println(s);
