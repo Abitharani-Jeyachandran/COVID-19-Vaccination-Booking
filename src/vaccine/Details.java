@@ -14,16 +14,16 @@ public class Details {
 		for (int index = 1; index <= numberOfVaccine; index++) {
 			Vaccine vaccine = new Vaccine();
 			// Get type of vaccine
-			System.out.println("Enter Type of Vaccine    1)Sinaform / 2)Delta / 3)PFizer");
+			System.out.println("Enter Type of Vaccine    1)Sinaform / 2)PFizer");
 			String type = sc.next();
 			// Check whether vaccine type available
 			vaccine.vaccineType = type;
 			// Enter date when vaccine will available
-			System.out.println("Enter the day(DD/MM/YY) in which Vaccine will be available");
+			System.out.println("Enter the day(DD/MM/YYYY) in which Vaccine will be available");
 			String day = sc.next();
 			vaccine.vaccinationAvailableDay = day;
 			// Enter number of time slots when vaccine will available
-			System.out.println("Enter the number of slots,the Vaccine will be available at [HH:mm]");
+			System.out.println("Enter the number of slots,the Vaccine will be available at [H:mm]");
 			int slotNumber = sc.nextInt();
 			for (int start = 1; start <= slotNumber; start++) {
 				vaccine.availabilty.put(sc.next(), false);
@@ -45,11 +45,13 @@ public class Details {
 		String vacType = "";
 		if (Integer.parseInt(personAge) <= 18 && Integer.parseInt(personAge) >= 10) {
 			System.out.println("Vaccine type:PFizer");
-			vacType = "3";
-		} else if (Integer.parseInt(personAge) <= 100) {
+			vacType = "2";
+		} else if (Integer.parseInt(personAge) > 18 && Integer.parseInt(personAge) <= 100 ) {
 			System.out.println("Vaccine type:Sinaform");
 			vacType = "1";
 			// String vaccineType = sc.next();
+		} else{
+			System.out.println("Your age should greater than 10");		
 		}
 		// System.out.println("Enter the vaccine type:");
 		// // Get vaccinattion type

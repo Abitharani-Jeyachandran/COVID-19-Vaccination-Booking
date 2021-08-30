@@ -12,12 +12,12 @@ public class Vaccination {
 	}
 
 	// Check availability
-	public boolean checkAvailability(List<Vaccine> vaccines, String personName, String doctorType, String day,
+	public boolean checkAvailability(List<Vaccine> vaccines, String personName, String vaccineType, String day,
 			String time, int numberOfVaccine, List<String> bookingHistory) {
 		int flag = 0;
 		OUTER: for (int index = 0; index < numberOfVaccine; index++) {
 			Vaccine doc = vaccines.get(index);
-			if (doc.vaccinationAvailableDay.equalsIgnoreCase(day) && doc.vaccineType.equalsIgnoreCase(doctorType)) {
+			if (doc.vaccinationAvailableDay.equalsIgnoreCase(day) && doc.vaccineType.equalsIgnoreCase(vaccineType)) {
 				for (Map.Entry<String, Boolean> m : doc.availabilty.entrySet()) {
 					if (time.equalsIgnoreCase(m.getKey()) && (m.getValue() == false)) {
 						doc.availabilty.put(m.getKey(), true);
