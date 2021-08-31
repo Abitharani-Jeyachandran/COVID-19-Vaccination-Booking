@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 
 public class Vaccine
 {
-	
+
 	public String vaccineType;
 	public String vaccinationAvailableDay;
-	public Map<String,Boolean> availabilty=new LinkedHashMap<>();
-	
+	public Map<String,Boolean> availabilty=new HashMap<>();
+
 }
